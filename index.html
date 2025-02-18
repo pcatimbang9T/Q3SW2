@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Math Operations</title>
+</head>
+<body>
+    <div class="container">
+        <h1><strong>MATH OPERATIONS</strong></h1>
+        <img src="jerry.png">
+        <br>
+        <p> Hello, I'm Jerry! I will prove to you that I'm smarter than Tom! </p>
+
+
+
+        <label for="numA">Enter number A:</label>
+        <input type="number" id="numA">
+        
+        <label for="numB">Enter number B:</label>
+        <input type="number" id="numB">
+        
+        <button onclick="performOperation('product')">Product</button>
+        <button onclick="performOperation('remainder')">Remainder</button>
+        <button onclick="performOperation('power')">A^B</button>
+        <button onclick="performOperation('equality')">Check Equality</button>
+        <button onclick="window.location.reload()">Refresh</button>
+
+    <script type="text/javascript">
+        function performOperation(operation) {
+            let a = parseFloat(document.getElementById('numA').value);
+            let b = parseFloat(document.getElementById('numB').value);
+            let result;
+            
+            switch(operation) {
+                case 'product':
+                    result = a * b;
+                    alert("Product: " + result);
+                    break;
+                case 'remainder':
+                    result = a % b;
+                    alert("Remainder: " + result);
+                    break;
+                case 'power':
+                    result = Math.pow(a, b);
+                    alert("A^B: " + result);
+                    break;
+                case 'equality':
+                    result = a === b ? "A and B are equal" : "A and B are not equal";
+                    alert(result);
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
